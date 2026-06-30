@@ -1,181 +1,238 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Hướng dẫn sử dụng App Mobile cho iOS và Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hướng dẫn sử dụng App Mobile" />
+  <meta property="og:description" content="Hướng dẫn theo tab iOS và Android, có ảnh chụp từng bước." />
+  <meta property="og:image" content="favicon.svg" />
   <title>Hướng dẫn sử dụng App Mobile</title>
-  <style>
-    :root {
-      --text: #1d2733;
-      --muted: #5d6b7a;
-      --line: #d8e2ee;
-      --brand: #0a4f9a;
-      --card: rgba(255,255,255,0.94);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.5;
-      background: linear-gradient(180deg,#dbe8fb 0%,#e7ecfb 34%,#f2dfeb 52%,#f6ead9 70%,#f4f2d9 86%,#f6f8fb 100%);
-      background-size: 100% 240%;
-      animation: hnaGradientFlow 22s ease-in-out infinite;
-      overflow-x: hidden;
-    }
-    .bits-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    .bit { position: absolute; color: rgba(20,70,130,.13); font-weight: 700; font-family: Consolas,"Courier New",monospace; animation: bitFlyX linear infinite; }
-    @keyframes bitFlyX { 0%{transform:translate3d(-12vw,0,0);opacity:0} 7%{opacity:1} 93%{opacity:1} 100%{transform:translate3d(112vw,0,0);opacity:0} }
-    @keyframes hnaGradientFlow { 0%{background-position:50% 0%} 50%{background-position:50% 100%} 100%{background-position:50% 0%} }
-
-    .layout { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 16px; display: grid; grid-template-columns: 270px 1fr; gap: 16px; }
-    .toc,.hero,.section,.step { background: var(--card); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(2px); }
-    .toc { position: sticky; top: 12px; align-self: start; padding: 12px; }
-    .toc h2 { margin: 0 0 8px; color: #123b70; font-size: 18px; }
-    .toc a { display: block; padding: 6px 8px; text-decoration: none; color: #204a80; border-radius: 8px; }
-    .toc a:hover { background: #edf4ff; }
-
-    .hero { padding: 16px; margin-bottom: 12px; }
-    .brand-grid { display: grid; grid-template-columns: 300px 1fr; gap: 14px; align-items: center; }
-    .logo-box { border: 1px dashed #b8cce4; border-radius: 10px; background: #f7fbff; min-height: 128px; display: flex; align-items: center; justify-content: center; padding: 10px; }
-    .logo-box img { max-width: 100%; max-height: 108px; object-fit: contain; }
-    .company h1 { margin: 0 0 8px; color: var(--brand); font-size: 30px; }
-    .company h2 { margin: 0 0 8px; color: #102f59; font-size: 16px; text-transform: uppercase; }
-    .company p { margin: 3px 0; color: var(--muted); font-size: 14px; }
-
-    .section { padding: 12px; margin-bottom: 14px; }
-
-    .services { padding: 14px; margin-bottom: 14px; }
-    .services h2 { margin: 0 0 6px; color: #123b70; font-size: 24px; }
-    .services p { margin: 0 0 12px; color: var(--muted); }
-    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-    .service-card { background: #ffffffd9; border: 1px solid var(--line); border-radius: 10px; padding: 12px 10px; text-align: center; min-height: 184px; }
-    .svc-icon { width: 42px; height: 42px; margin: 0 auto 8px; color: #1e79cc; }
-    .service-card h3 { margin: 0 0 6px; font-size: 14px; color: #14579a; min-height: 38px; text-transform: uppercase; }
-    .service-card p { margin: 0; font-size: 13px; color: #5f6f80; }
-
-    .section h2 { margin: 0 0 6px; color: #123b70; font-size: 24px; }
-    .section p { margin: 0; color: var(--muted); }
-
-    .step { margin-top: 12px; overflow: hidden; }
-    .step-head { background: #f8fbff; border-bottom: 1px solid var(--line); padding: 8px 10px; font-weight: 700; color: #22476f; font-size: 14px; }
-    .step-note { margin: 0; padding: 8px 10px 0; color: var(--muted); font-size: 14px; }
-    .shot-wrap { padding: 10px; text-align: center; }
-    .shot { width: 220px !important; max-width: 220px !important; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #eef3f9; }
-
-    @media (max-width: 980px) {
-      .layout { grid-template-columns: 1fr; }
-      .toc { position: static; }
-      .brand-grid { grid-template-columns: 1fr; }
-      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 640px) {
-      .service-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="bits-layer" id="bitsLayer" aria-hidden="true"></div>
 
-  <div class="layout">
-    <aside class="toc">
-      <h2>Mục lục</h2>
-      <a href="#overview">1. Tổng quan</a>
-      <a href="#permission">2. Cấp quyền ban đầu</a>
-      <a href="#activate">3. Kích hoạt và kết nối BLE</a>
-      <a href="#config">4. Cấu hình đầu đọc</a>
-      <a href="#normal">5. Vận hành bình thường</a>
-    </aside>
+  <main class="shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">User Guide</span>
+        <h1>Hướng dẫn sử dụng App Mobile</h1>
+        <p class="lead">
+          Chọn tab iOS hoặc Android để xem đúng luồng thao tác cho nền tảng của bạn.
+          Trang này tập trung vào quyền, kích hoạt, kết nối BLE, cấu hình và quét thẻ.
+        </p>
+      </div>
 
-    <main>
-      <section class="hero" id="overview">
-        <div class="brand-grid">
-          <div class="logo-box"><img src="logo-maxtech.png" alt="Logo Maxtech" /></div>
-          <div class="company">
-            <h1>Hướng dẫn sử dụng App Mobile</h1>
-            <h2>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ DỊCH VỤ MAXTECH VIỆT NAM</h2>
-            <p><strong>Trụ sở:</strong> Số 25 ngách 28/25, Phố Ông Ích Khiêm, Phường Ba Đình, TP Hà Nội.</p>
-            <p><strong>VPGD:</strong> Tòa nhà SunSquare, 21 Lê Đức Thọ, Phường Từ Liêm, TP Hà Nội.</p>
-            <p><strong>Website:</strong> www.maxtech.vn - www.quanlyxethongminh.com - www.hethongquanlyxetudong.com</p>
-            <p><strong>Email:</strong> maxtechvietnam@gmail.com - <strong>Điện thoại:</strong> 084 291 5555</p>
+      <div class="hero-pills" aria-label="Tóm tắt">
+        <span class="pill">QR activation</span>
+        <span class="pill">Bluetooth / BLE</span>
+        <span class="pill">NFC / RFID</span>
+        <span class="pill">Cấu hình thiết bị</span>
+      </div>
+    </header>
+
+    <section class="tabs-card">
+      <div class="tabbar" role="tablist" aria-label="Chọn nền tảng">
+        <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-ios" id="tab-ios" data-tab="ios">iOS</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-android" id="tab-android" data-tab="android">Android</button>
+      </div>
+
+      <div class="panel-wrap">
+        <section class="panel is-active" role="tabpanel" id="panel-ios" aria-labelledby="tab-ios">
+          <div class="panel-intro">
+            <h2>Hướng dẫn cho iOS</h2>
+            <p>
+              Trên iPhone, hãy ưu tiên cấp Camera, Bluetooth, Photo Library và NFC
+              đúng lúc app yêu cầu. iOS sẽ tự hiển thị prompt theo từng luồng chức năng.
+            </p>
           </div>
-        </div>
-      </section>
-      <section class="services section" id="services">
-        <h2>1. S&#7843;n ph&#7849;m &amp; D&#7883;ch v&#7909;</h2>
-        <p>M&#7897;t s&#7889; nh&#243;m gi&#7843;i ph&#225;p Maxtech &#273;ang tri&#7875;n khai cho kh&#225;ch h&#224;ng doanh nghi&#7879;p v&#224; t&#242;a nh&#224;.</p>
-        <div class="service-grid">
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="18" height="12" rx="2"/><rect x="5" y="9" width="8" height="2" fill="white"/><rect x="5" y="13" width="4" height="2" fill="white"/></svg><h3>Th&#7867; th&#244;ng minh</h3><p>Th&#7867; nh&#7853;n d&#7841;ng an to&#224;n, ch&#7889;ng sao ch&#233;p, ph&#249; h&#7907;p ki&#7875;m so&#225;t ra v&#224;o hi&#7879;n &#273;&#7841;i.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 9l8-4 8 4v10H4z"/><rect x="7" y="11" width="10" height="2" fill="white"/><rect x="7" y="15" width="10" height="2" fill="white"/></svg><h3>Nh&#224; th&#244;ng minh</h3><p>T&#7921; &#273;&#7897;ng h&#243;a thi&#7871;t b&#7883; trong nh&#224;, qu&#7843;n l&#253; t&#7915; xa v&#224; c&#7843;nh b&#225;o linh ho&#7841;t.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14l-3 16H8z"/><rect x="11" y="8" width="2" height="4" fill="white"/></svg><h3>Giao th&#244;ng th&#244;ng minh</h3><p>Gi&#7843;i ph&#225;p &#273;i&#7873;u ph&#7889;i giao th&#244;ng v&#224; b&#227;i xe b&#7857;ng ph&#7847;n m&#7873;m chuy&#234;n d&#7909;ng.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7l-4 4-2-2 4-4zM4 20l5-1 9-9-4-4-9 9z"/></svg><h3>B&#7843;o tr&#236; h&#7879; th&#7889;ng</h3><p>N&#226;ng c&#7845;p, s&#7917;a ch&#7919;a v&#224; b&#7843;o d&#432;&#7905;ng &#273;&#7883;nh k&#7923; cho to&#224;n b&#7897; h&#7879; th&#7889;ng car parking.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="10" width="18" height="7" rx="2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><rect x="6" y="7" width="12" height="4" rx="2"/></svg><h3>Qu&#7843;n l&#253; b&#227;i xe th&#244;ng minh</h3><p>Ki&#7875;m so&#225;t xe v&#224;o/ra t&#7921; &#273;&#7897;ng, gi&#7843;m nh&#226;n s&#7921; v&#7853;n h&#224;nh, t&#259;ng an to&#224;n.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 10h18v4H3zM6 7h12v2H6zM6 15h12v2H6z"/></svg><h3>B&#225;o ch&#7895; tr&#7889;ng &amp; d&#7851;n h&#432;&#7899;ng</h3><p>Hi&#7875;n th&#7883; v&#7883; tr&#237; c&#242;n tr&#7889;ng v&#224; h&#432;&#7899;ng d&#7851;n xe nhanh &#273;&#7871;n &#244; &#273;&#7895; ph&#249; h&#7907;p.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="6" width="12" height="10" rx="2"/><path d="M16 9l4-2v8l-4-2z"/></svg><h3>Camera an ninh hi&#7879;n &#273;&#7841;i</h3><p>Gi&#225;m s&#225;t t&#7853;p trung, t&#237;ch h&#7907;p ph&#226;n t&#237;ch AI &#273;&#7875; n&#226;ng cao hi&#7879;u qu&#7843; b&#7843;o v&#7879;.</p></article>
-          <article class="service-card"><svg class="svc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l8 6v10H4V9z"/><rect x="10" y="12" width="4" height="7" fill="white"/></svg><h3>Ki&#7875;m so&#225;t c&#7893;ng c&#7917;a</h3><p>Qu&#7843;n l&#253; c&#7917;a ra v&#224;o t&#242;a nh&#224; theo ph&#226;n quy&#7873;n, nh&#7853;t k&#253; &#273;&#7847;y &#273;&#7911;, b&#7843;o m&#7853;t cao.</p></article>
-        </div>
-      </section>
-<section class="section" id="permission">
-        <h2>2. Cấp quyền ban đầu</h2>
-        <p>Khi mở app lần đầu, anh/chị cấp đủ quyền để ứng dụng hoạt động ổn định.</p>
 
-        <article class="step"><div class="step-head">Bước 1: Kiểm tra trạng thái quyền BLE</div><p class="step-note">Nếu ứng dụng báo chưa có quyền Bluetooth, mình chọn cấp quyền trước khi thao tác tiếp.</p><div class="shot-wrap"><img class="shot" src="tt-chuacapquyen-ble.jpg" alt="Chưa cấp quyền BLE" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 2: Kiểm tra trạng thái quyền NFC</div><p class="step-note">Nếu máy có hỗ trợ NFC, vui lòng bật và cho phép để quét thẻ nhanh hơn.</p><div class="shot-wrap"><img class="shot" src="tt-chuacapquyen-nfc.jpg" alt="Chưa cấp quyền NFC" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 3: Cấp quyền BLE</div><p class="step-note">Chọn “Cho phép” để app tìm và kết nối đầu đọc gần nhất.</p><div class="shot-wrap"><img class="shot" src="b1-capquyen-ble.jpg" alt="Cấp quyền BLE" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 4: Cấp quyền Camera</div><p class="step-note">Camera dùng cho một số thao tác nhận diện/mã QR, nên mình cấp quyền luôn để khỏi gián đoạn.</p><div class="shot-wrap"><img class="shot" src="tt-capquyen-camera.jpg" alt="Cấp quyền Camera" loading="lazy" /></div></article>
-      </section>
+          <div class="step-grid">
+            <article class="step-card">
+              <div class="step-head">1. Kiểm tra quyền ban đầu</div>
+              <p class="step-note">Xem trước trạng thái quyền để tránh gián đoạn khi kích hoạt hoặc quét thẻ.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-chuacapquyen-ble.jpg" alt="Chưa cấp quyền BLE" loading="lazy" />
+                <img class="shot" src="tt-chuacapquyen-nfc.jpg" alt="Chưa cấp quyền NFC" loading="lazy" />
+                <img class="shot" src="tt-capquyen-camera.jpg" alt="Cấp quyền Camera" loading="lazy" />
+              </div>
+            </article>
 
-      <section class="section" id="activate">
-        <h2>3. Kích hoạt và kết nối BLE</h2>
-        <p>Ở bước này, mình kích hoạt app và ghép nối với thiết bị iCard qua BLE.</p>
+            <article class="step-card">
+              <div class="step-head">2. Kích hoạt license</div>
+              <p class="step-note">Quét QR kích hoạt, chờ xác nhận và hoàn tất để mở khóa các tính năng thiết bị.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-chuakichhoat-licence.jpg" alt="Chưa kích hoạt license" loading="lazy" />
+                <img class="shot" src="tt-kichhoat-thanhcong.jpg" alt="Kích hoạt thành công" loading="lazy" />
+              </div>
+            </article>
 
-        <article class="step"><div class="step-head">Bước 5: Kiểm tra trạng thái license</div><p class="step-note">Nếu màn hình báo chưa kích hoạt, mình làm theo hướng dẫn để kích hoạt trước.</p><div class="shot-wrap"><img class="shot" src="tt-chuakichhoat-licence.jpg" alt="Chưa kích hoạt license" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 6: Kích hoạt thành công</div><p class="step-note">Sau khi kích hoạt xong, app sẽ báo trạng thái thành công như hình.</p><div class="shot-wrap"><img class="shot" src="tt-kichhoat-thanhcong.jpg" alt="Kích hoạt thành công" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 7: Vào màn hình BLE</div><p class="step-note">Chuyển sang tab BLE để bắt đầu tìm thiết bị đầu đọc.</p><div class="shot-wrap"><img class="shot" src="tt-manhinh-ble-anhnen.jpg" alt="Màn hình BLE" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 8: Nhấn vào dấu tích để kết nối</div><p class="step-note">Nhấn nút kết nối theo hình, app sẽ bắt đầu ghép nối tự động.</p><div class="shot-wrap"><img class="shot" src="tt-kichhoat-ble-nhapvaodautich.jpg" alt="Nhấn tích kết nối BLE" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 9: Chờ trạng thái đang kết nối</div><p class="step-note">Trong lúc kết nối, mình giữ điện thoại gần đầu đọc để tín hiệu ổn định.</p><div class="shot-wrap"><img class="shot" src="tt-dangketnoi-ble.jpg" alt="Đang kết nối BLE" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 10: Kết nối BLE thành công</div><p class="step-note">Khi thấy thông báo thành công, app đã sẵn sàng để quét thẻ.</p><div class="shot-wrap"><img class="shot" src="tt-ketnoi-ble-icard-thanhcong.jpg" alt="Kết nối BLE thành công" loading="lazy" /></div></article>
-      </section>
+            <article class="step-card">
+              <div class="step-head">3. Kết nối BLE</div>
+              <p class="step-note">Mở màn hình BLE, nhấn nút kết nối và giữ điện thoại gần đầu đọc cho đến khi thành công.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-manhinh-ble-anhnen.jpg" alt="Màn hình BLE" loading="lazy" />
+                <img class="shot" src="tt-kichhoat-ble-nhapvaodautich.jpg" alt="Nhấn nút kết nối BLE" loading="lazy" />
+                <img class="shot" src="tt-dangketnoi-ble.jpg" alt="Đang kết nối BLE" loading="lazy" />
+                <img class="shot" src="tt-ketnoi-ble-icard-thanhcong.jpg" alt="Kết nối BLE thành công" loading="lazy" />
+              </div>
+            </article>
 
-      <section class="section" id="config">
-        <h2>4. Cấu hình đầu đọc</h2>
-        <p>Mình có thể tùy chỉnh giao diện, ngôn ngữ và tên thiết bị theo nhu cầu.</p>
+            <article class="step-card">
+              <div class="step-head">4. Cấu hình thiết bị</div>
+              <p class="step-note">Cấu hình giao diện, ngôn ngữ, và đổi tên đầu đọc nếu cần để dễ quản lý.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-cauhinh.jpg" alt="Màn hình cấu hình" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-giaodien.jpg" alt="Cấu hình giao diện" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-ngonngu.jpg" alt="Cấu hình ngôn ngữ" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-ten-daudoc.jpg" alt="Cấu hình tên đầu đọc" loading="lazy" />
+              </div>
+            </article>
 
-        <article class="step"><div class="step-head">Bước 11: Mở màn hình cấu hình</div><p class="step-note">Vào phần Cấu hình để điều chỉnh các thông số sử dụng.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh.jpg" alt="Màn hình cấu hình" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 12: Cấu hình giao diện</div><p class="step-note">Chọn bố cục hiển thị phù hợp với thói quen sử dụng.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh-giaodien.jpg" alt="Cấu hình giao diện" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 13: Cấu hình ngôn ngữ</div><p class="step-note">Chọn tiếng Việt/tiếng Anh tùy theo người vận hành.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh-ngonngu.jpg" alt="Cấu hình ngôn ngữ" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 14: Đổi tên đầu đọc</div><p class="step-note">Đặt tên dễ nhớ để phân biệt khi có nhiều thiết bị.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh-ten-daudoc.jpg" alt="Cấu hình tên đầu đọc" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 15: Xem hướng dẫn đặt tên</div><p class="step-note">Đọc kỹ quy tắc đặt tên để tránh lỗi ký tự.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh-ten-daudoc-hdbt.jpg" alt="Hướng dẫn đặt tên" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 16: Xác nhận đổi tên thành công</div><p class="step-note">Nếu hiện thông báo thành công, tên mới đã được lưu.</p><div class="shot-wrap"><img class="shot" src="tt-cauhinh-ten-daudoc-thanhcong.jpg" alt="Đổi tên thành công" loading="lazy" /></div></article>
-      </section>
+            <article class="step-card">
+              <div class="step-head">5. Bật ảnh nền và kiểm tra trạng thái</div>
+              <p class="step-note">Chọn ảnh nền nếu cần, rồi kiểm tra màn hình hoạt động bình thường.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-ch-anhnen.jpg" alt="Chọn ảnh nền" loading="lazy" />
+                <img class="shot" src="tt-hoatdong-binhthuong.jpg" alt="Hoạt động bình thường" loading="lazy" />
+              </div>
+            </article>
 
-      <section class="section" id="normal">
-        <h2>5. Vận hành bình thường</h2>
-        <p>Cuối cùng, kiểm tra trạng thái hệ thống và thử quét thẻ thực tế.</p>
+            <article class="step-card">
+              <div class="step-head">6. Quét thẻ BLE / NFC</div>
+              <p class="step-note">Kiểm tra quét thành công ở cả BLE và NFC để xác nhận toàn bộ luồng hoạt động ổn định.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-quetthe-thanhcong-ble.jpg" alt="Quét thẻ BLE thành công" loading="lazy" />
+                <img class="shot" src="tt-quetthe-thanhcong-nfc.jpg" alt="Quét thẻ NFC thành công" loading="lazy" />
+              </div>
+            </article>
+          </div>
+        </section>
 
-        <article class="step"><div class="step-head">Bước 17: Chọn ảnh nền (nếu cần)</div><p class="step-note">Có thể tùy chỉnh hình nền để dễ nhận diện màn hình làm việc.</p><div class="shot-wrap"><img class="shot" src="tt-ch-anhnen.jpg" alt="Chọn ảnh nền" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 18: Kiểm tra trạng thái hoạt động</div><p class="step-note">Ở trạng thái bình thường, app hiển thị sẵn sàng quét thẻ.</p><div class="shot-wrap"><img class="shot" src="tt-hoatdong-binhthuong.jpg" alt="Hoạt động bình thường" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 19: Quét thẻ BLE thành công</div><p class="step-note">Thử quét thẻ BLE, nếu hiện thông báo thành công là hệ thống ổn.</p><div class="shot-wrap"><img class="shot" src="tt-quetthe-thanhcong-ble.jpg" alt="Quét thẻ BLE thành công" loading="lazy" /></div></article>
-        <article class="step"><div class="step-head">Bước 20: Quét thẻ NFC thành công</div><p class="step-note">Thử thêm thẻ NFC để kiểm tra đầy đủ các chế độ đọc thẻ.</p><div class="shot-wrap"><img class="shot" src="tt-quetthe-thanhcong-nfc.jpg" alt="Quét thẻ NFC thành công" loading="lazy" /></div></article>
-      </section>
-    </main>
-  </div>
+        <section class="panel" role="tabpanel" id="panel-android" aria-labelledby="tab-android" hidden>
+          <div class="panel-intro">
+            <h2>Hướng dẫn cho Android</h2>
+            <p>
+              Trên Android, chú ý phần quyền BLE và NFC. Nếu thiết bị ở Android 11 trở xuống,
+              vị trí có thể liên quan đến quét BLE theo cấu hình hệ thống.
+            </p>
+          </div>
+
+          <div class="step-grid">
+            <article class="step-card">
+              <div class="step-head">1. Cấp quyền ban đầu</div>
+              <p class="step-note">Cấp quyền Bluetooth, NFC và Camera trước khi bắt đầu để app không bị ngắt quãng.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-chuacapquyen-ble.jpg" alt="Chưa cấp quyền BLE" loading="lazy" />
+                <img class="shot" src="b1-capquyen-ble.jpg" alt="Cấp quyền BLE" loading="lazy" />
+                <img class="shot" src="tt-chuacapquyen-nfc.jpg" alt="Chưa cấp quyền NFC" loading="lazy" />
+                <img class="shot" src="tt-capquyen-camera.jpg" alt="Cấp quyền Camera" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="step-head">2. Kích hoạt license</div>
+              <p class="step-note">Quét QR kích hoạt và xác nhận xong để chuyển sang trạng thái vận hành.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-chuakichhoat-licence.jpg" alt="Chưa kích hoạt license" loading="lazy" />
+                <img class="shot" src="tt-kichhoat-thanhcong.jpg" alt="Kích hoạt thành công" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="step-head">3. Kết nối BLE</div>
+              <p class="step-note">Mở màn hình BLE, nhấn nút kết nối và chờ trạng thái ghép nối thành công.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-manhinh-ble-anhnen.jpg" alt="Màn hình BLE" loading="lazy" />
+                <img class="shot" src="tt-kichhoat-ble-nhapvaodautich.jpg" alt="Nhấn nút kết nối BLE" loading="lazy" />
+                <img class="shot" src="tt-dangketnoi-ble.jpg" alt="Đang kết nối BLE" loading="lazy" />
+                <img class="shot" src="tt-ketnoi-ble-icard-thanhcong.jpg" alt="Kết nối BLE thành công" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="step-head">4. Đổi tên đầu đọc</div>
+              <p class="step-note">Đặt tên dễ nhớ, xem hướng dẫn đặt tên và xác nhận sau khi lưu thành công.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-cauhinh-ten-daudoc.jpg" alt="Cấu hình tên đầu đọc" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-ten-daudoc-hdbt.jpg" alt="Hướng dẫn đặt tên" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-ten-daudoc-thanhcong.jpg" alt="Đổi tên thành công" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="step-head">5. Cấu hình và ảnh nền</div>
+              <p class="step-note">Tuỳ chỉnh giao diện, ngôn ngữ và ảnh nền để thao tác thuận tiện hơn.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-cauhinh.jpg" alt="Màn hình cấu hình" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-giaodien.jpg" alt="Cấu hình giao diện" loading="lazy" />
+                <img class="shot" src="tt-cauhinh-ngonngu.jpg" alt="Cấu hình ngôn ngữ" loading="lazy" />
+                <img class="shot" src="tt-ch-anhnen.jpg" alt="Chọn ảnh nền" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="step-card">
+              <div class="step-head">6. Quét thẻ BLE / NFC</div>
+              <p class="step-note">Khi app ở trạng thái bình thường, thử quét BLE và NFC để kiểm tra kết nối đầu đọc.</p>
+              <div class="shot-grid">
+                <img class="shot" src="tt-hoatdong-binhthuong.jpg" alt="Hoạt động bình thường" loading="lazy" />
+                <img class="shot" src="tt-quetthe-thanhcong-ble.jpg" alt="Quét thẻ BLE thành công" loading="lazy" />
+                <img class="shot" src="tt-quetthe-thanhcong-nfc.jpg" alt="Quét thẻ NFC thành công" loading="lazy" />
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
 
   <script>
     (function () {
       const layer = document.getElementById('bitsLayer');
-      const count = 440;
-      for (let i = 0; i < count; i++) {
-        const span = document.createElement('span');
-        span.className = 'bit';
-        span.textContent = Math.random() > 0.5 ? '1' : '0';
-        span.style.left = (-10 + Math.random() * 15).toFixed(2) + 'vw';
-        span.style.top = (Math.random() * 100).toFixed(2) + 'vh';
-        span.style.fontSize = (9 + Math.random() * 16).toFixed(0) + 'px';
-        span.style.animationDuration = (7 + Math.random() * 16).toFixed(2) + 's';
-        span.style.animationDelay = (-Math.random() * 22).toFixed(2) + 's';
-        layer.appendChild(span);
+      if (layer) {
+        const count = 220;
+        for (let i = 0; i < count; i++) {
+          const span = document.createElement('span');
+          span.className = 'bit';
+          span.textContent = Math.random() > 0.5 ? '1' : '0';
+          span.style.left = (-10 + Math.random() * 15).toFixed(2) + 'vw';
+          span.style.top = (Math.random() * 100).toFixed(2) + 'vh';
+          span.style.fontSize = (9 + Math.random() * 12).toFixed(0) + 'px';
+          span.style.animationDuration = (9 + Math.random() * 16).toFixed(2) + 's';
+          span.style.animationDelay = (-Math.random() * 22).toFixed(2) + 's';
+          layer.appendChild(span);
+        }
       }
+
+      const tabs = Array.from(document.querySelectorAll('[data-tab]'));
+      const panels = new Map(
+        Array.from(document.querySelectorAll('.panel')).map((panel) => [panel.id.replace('panel-', ''), panel]),
+      );
+
+      function activate(tabName) {
+        tabs.forEach((button) => {
+          const isActive = button.dataset.tab === tabName;
+          button.classList.toggle('is-active', isActive);
+          button.setAttribute('aria-selected', String(isActive));
+          button.tabIndex = isActive ? 0 : -1;
+        });
+
+        panels.forEach((panel, key) => {
+          const isActive = key === tabName;
+          panel.classList.toggle('is-active', isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      tabs.forEach((button) => {
+        button.addEventListener('click', () => activate(button.dataset.tab));
+      });
+
+      activate('ios');
     })();
   </script>
 </body>
