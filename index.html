@@ -3,237 +3,232 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="Hướng dẫn sử dụng App Mobile cho iOS và Android." />
+  <meta name="theme-color" content="#047857" />
+  <meta name="description" content="Hướng dẫn cài đặt, kích hoạt, mở nhanh và xử lý sự cố iCard System trên iPhone và Android." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hướng dẫn sử dụng App Mobile" />
-  <meta property="og:description" content="Hướng dẫn theo tab iOS và Android, có ảnh chụp từng bước." />
-  <meta property="og:image" content="favicon.svg" />
-  <title>Hướng dẫn sử dụng App Mobile</title>
+  <meta property="og:title" content="Hướng dẫn iCard System cho iOS và Android" />
+  <meta property="og:description" content="Hướng dẫn bằng chữ, chia theo nền tảng và hãng điện thoại, có quy trình xử lý sự cố rõ ràng." />
+  <title>Hướng dẫn iCard System cho iOS và Android</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bits-layer" id="bitsLayer" aria-hidden="true"></div>
+  <a class="skip-link" href="#noi-dung">Chuyển đến nội dung chính</a>
 
-  <main class="shell">
-    <header class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">User Guide</span>
-        <h1>Hướng dẫn sử dụng App Mobile</h1>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="iCard System - đầu trang">
+        <span class="brand-mark" aria-hidden="true">iCS</span>
+        <span><strong>iCard System</strong><small>Trung tâm hướng dẫn</small></span>
+      </a>
+      <nav class="header-links" aria-label="Liên kết hỗ trợ">
+        <a href="https://hna-privacy-policy.hna.id.vn/">Chính sách bảo mật</a>
+        <a class="support-link" href="mailto:support@hna.id.vn">Liên hệ hỗ trợ</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page" id="top">
+    <aside class="side-nav" aria-label="Mục lục hướng dẫn">
+      <p class="nav-title">Trong hướng dẫn này</p>
+      <nav>
+        <a href="#bat-dau">Bắt đầu trong 5 phút</a>
+        <a href="#ios">iPhone / iOS</a>
+        <a href="#ios-mo-nhanh">Mở nhanh trên iPhone</a>
+        <a href="#android">Android</a>
+        <a href="#android-mo-nhanh">Mở nhanh trên Android</a>
+        <a href="#hang-android">Theo từng hãng Android</a>
+        <a href="#van-hanh">BLE và NFC</a>
+        <a href="#xu-ly-loi">Xử lý sự cố</a>
+        <a href="#bao-mat">An toàn và dữ liệu</a>
+        <a href="#nguon">Nguồn tham khảo</a>
+      </nav>
+    </aside>
+
+    <main class="content" id="noi-dung">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Hướng dẫn chính thức</p>
+        <h1 id="page-title">Cài đặt và sử dụng iCard System</h1>
         <p class="lead">
-          Chọn tab iOS hoặc Android để xem đúng luồng thao tác cho nền tảng của bạn.
-          Trang này tập trung vào quyền, kích hoạt, kết nối BLE, cấu hình và quét thẻ.
+          Hướng dẫn bằng chữ dành cho iPhone từ iPhone 8 đến các dòng mới nhất và điện thoại Android phổ biến.
+          Nội dung bao gồm kích hoạt licence, cấp quyền, kết nối đầu đọc BLE, sử dụng NFC và tạo lối mở nhanh.
         </p>
+        <div class="hero-meta" aria-label="Thông tin hướng dẫn">
+          <span>Cập nhật: 23/08/2026</span><span>iOS 13 trở lên</span>
+          <span>Android có BLE hoặc NFC</span><span>Không cần tài khoản đăng nhập</span>
+        </div>
+      </section>
+
+      <div class="important-note" role="note">
+        <strong>Điểm cần nhớ:</strong> mở nhanh chỉ đưa ứng dụng đến màn hình Auto Swipe và chuẩn bị luồng thao tác.
+        Ứng dụng không tự quét hoặc truyền dữ liệu thẻ khi chưa có thao tác của người dùng.
       </div>
 
-      <div class="hero-pills" aria-label="Tóm tắt">
-        <span class="pill">QR activation</span>
-        <span class="pill">Bluetooth / BLE</span>
-        <span class="pill">NFC / RFID</span>
-        <span class="pill">Cấu hình thiết bị</span>
-      </div>
-    </header>
+      <section id="bat-dau" class="section-block">
+        <div class="section-heading">
+          <p class="section-kicker">Quy trình chuẩn</p>
+          <h2>Bắt đầu trong 5 phút</h2>
+          <p>Áp dụng cho cả iOS và Android. Tên menu hệ thống có thể khác nhẹ theo phiên bản phần mềm.</p>
+        </div>
+        <div class="checklist" aria-label="Chuẩn bị trước khi kích hoạt">
+          <h3>Chuẩn bị trước khi mở ứng dụng</h3>
+          <ul>
+            <li>Mã QR kích hoạt còn hiệu lực và được cấp đúng cho người sử dụng.</li>
+            <li>Điện thoại có Internet ổn định trong lần kích hoạt đầu tiên.</li>
+            <li>Bluetooth đã bật nếu sử dụng đầu đọc RFID BLE.</li>
+            <li>NFC đã bật trên Android nếu sử dụng thẻ trực tiếp với điện thoại.</li>
+            <li>Đầu đọc RFID đã sạc, đang bật và đặt gần điện thoại.</li>
+          </ul>
+        </div>
+        <ol class="steps">
+          <li><div><h3>Cài đặt hoặc cập nhật ứng dụng</h3><p>Tải iCard System từ App Store trên iPhone hoặc nguồn phân phối Android được đơn vị quản lý phê duyệt. Không cài gói ứng dụng từ liên kết không rõ nguồn gốc.</p></div></li>
+          <li><div><h3>Mở iCard System và chọn quét QR kích hoạt</h3><p>Thực hiện quét ngay trong iCard System. Không dùng ứng dụng Camera độc lập để mở nội dung QR kích hoạt.</p></div></li>
+          <li><div><h3>Cấp quyền Camera</h3><p>Chọn <strong>Cho phép</strong> khi hệ điều hành hỏi quyền Camera. Căn toàn bộ mã QR trong khung và giữ điện thoại ổn định.</p></div></li>
+          <li><div><h3>Chờ xác nhận licence</h3><p>Giữ ứng dụng ở màn hình trước và duy trì kết nối Internet cho đến khi trạng thái licence được hiển thị là hợp lệ.</p></div></li>
+          <li><div><h3>Cấp quyền Bluetooth khi kết nối đầu đọc</h3><p>Mở mục BLE, chấp nhận quyền Bluetooth hoặc Thiết bị ở gần, chọn đúng đầu đọc và chờ trạng thái kết nối thành công.</p></div></li>
+          <li><div><h3>Kiểm tra một giao dịch thử</h3><p>Dùng thẻ thử đã được phê duyệt để kiểm tra BLE hoặc NFC. Chỉ đưa hệ thống vào vận hành sau khi ứng dụng báo thành công.</p></div></li>
+        </ol>
+      </section>
 
-    <section class="tabs-card">
-      <div class="tabbar" role="tablist" aria-label="Chọn nền tảng">
-        <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-ios" id="tab-ios" data-tab="ios">iOS</button>
-        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-android" id="tab-android" data-tab="android">Android</button>
-      </div>
+      <section id="ios" class="section-block platform-section">
+        <div class="platform-title">
+          <span class="platform-badge">iOS</span>
+          <div><h2>Thiết lập trên iPhone</h2><p>Áp dụng từ iPhone 8/8 Plus/X đến các dòng iPhone mới nhất có NFC reader mode.</p></div>
+        </div>
+        <div class="info-grid">
+          <article class="info-card"><h3>iPhone 8, 8 Plus và iPhone X</h3><p>Các máy này hỗ trợ NFC reader mode và có thể chạy iCard System trên iOS 16. Hỗ trợ App Shortcut/Siri, nhưng không có nút iCard trong Control Center kiểu iOS 18.</p></article>
+          <article class="info-card"><h3>iPhone XS, XR và SE thế hệ 2 trở lên</h3><p>Có thể sử dụng App Shortcut. Nếu máy chạy iOS 18 trở lên, có thể thêm nút <strong>iCard Auto Swipe</strong> vào Control Center.</p></article>
+          <article class="info-card"><h3>iPhone 11 đến dòng mới nhất</h3><p>Sử dụng đầy đủ các cách mở nhanh khi phiên bản iOS hỗ trợ. Nên cập nhật iOS trong phạm vi Apple còn hỗ trợ cho từng đời máy.</p></article>
+        </div>
 
-      <div class="panel-wrap">
-        <section class="panel is-active" role="tabpanel" id="panel-ios" aria-labelledby="tab-ios">
-          <div class="panel-intro">
-            <h2>Hướng dẫn cho iOS</h2>
-            <p>
-              Trên iPhone, hãy ưu tiên cấp Camera, Bluetooth, Photo Library và NFC
-              đúng lúc app yêu cầu. iOS sẽ tự hiển thị prompt theo từng luồng chức năng.
-            </p>
-          </div>
+        <h3 class="subheading">Cấp lại quyền nếu trước đó đã chọn “Không cho phép”</h3>
+        <ol class="compact-steps">
+          <li>Mở <strong>Cài đặt</strong> trên iPhone.</li><li>Chọn <strong>Quyền riêng tư &amp; Bảo mật</strong>.</li>
+          <li>Mở <strong>Camera</strong> hoặc <strong>Bluetooth</strong>.</li><li>Bật quyền cho <strong>iCard System</strong>, sau đó quay lại ứng dụng.</li>
+        </ol>
+        <p class="callout">iOS không có công tắc NFC riêng cho ứng dụng. Khi bạn chọn chức năng NFC trong iCard System, phiên đọc NFC được mở theo cơ chế bảo mật của iOS.</p>
 
-          <div class="step-grid">
-            <article class="step-card">
-              <div class="step-head">1. Kiểm tra quyền ban đầu</div>
-              <p class="step-note">Xem trước trạng thái quyền để tránh gián đoạn khi kích hoạt hoặc quét thẻ.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-chuacapquyen-ble.jpg" alt="Chưa cấp quyền BLE" loading="lazy" />
-                <img class="shot" src="tt-chuacapquyen-nfc.jpg" alt="Chưa cấp quyền NFC" loading="lazy" />
-                <img class="shot" src="tt-capquyen-camera.jpg" alt="Cấp quyền Camera" loading="lazy" />
-              </div>
-            </article>
+        <h3 class="subheading">Cách đặt điện thoại khi quét NFC</h3>
+        <ul class="plain-list">
+          <li>Giữ phần <strong>cạnh trên hoặc mặt lưng phía trên</strong> của iPhone sát thẻ NFC; đây là khu vực anten thường phản hồi tốt nhất.</li>
+          <li>Giữ yên khoảng 1–3 giây, không lướt nhanh qua thẻ.</li>
+          <li>Tháo ốp quá dày, ốp kim loại, ví nam châm hoặc phụ kiện MagSafe nếu việc đọc thẻ chập chờn.</li>
+          <li>Chỉ đưa một thẻ vào vùng đọc để tránh nhận nhầm thẻ khác trong ví.</li>
+        </ul>
 
-            <article class="step-card">
-              <div class="step-head">2. Kích hoạt license</div>
-              <p class="step-note">Quét QR kích hoạt, chờ xác nhận và hoàn tất để mở khóa các tính năng thiết bị.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-chuakichhoat-licence.jpg" alt="Chưa kích hoạt license" loading="lazy" />
-                <img class="shot" src="tt-kichhoat-thanhcong.jpg" alt="Kích hoạt thành công" loading="lazy" />
-              </div>
-            </article>
+        <h3 class="subheading">Khi cập nhật hoặc cài lại ứng dụng</h3>
+        <div class="status-table-wrap">
+          <table class="status-table">
+            <thead><tr><th>Tình huống</th><th>Kết quả thông thường</th><th>Việc cần làm</th></tr></thead>
+            <tbody>
+              <tr><td>Cập nhật từ App Store</td><td>Licence và cấu hình vẫn được giữ.</td><td>Mở ứng dụng và kiểm tra trạng thái; không cần quét QR lại.</td></tr>
+              <tr><td>Xóa rồi cài lại trên cùng iPhone</td><td>Ứng dụng sẽ thử khôi phục licence đã lưu an toàn.</td><td>Giữ Internet trong lần mở đầu tiên. Chỉ quét lại nếu ứng dụng yêu cầu.</td></tr>
+              <tr><td>Đổi iPhone, đặt lại máy hoặc licence bị thu hồi</td><td>Có thể không khôi phục được licence cũ.</td><td>Liên hệ đơn vị cấp licence để xác minh và cấp mã QR mới.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">3. Kết nối BLE</div>
-              <p class="step-note">Mở màn hình BLE, nhấn nút kết nối và giữ điện thoại gần đầu đọc cho đến khi thành công.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-manhinh-ble-anhnen.jpg" alt="Màn hình BLE" loading="lazy" />
-                <img class="shot" src="tt-kichhoat-ble-nhapvaodautich.jpg" alt="Nhấn nút kết nối BLE" loading="lazy" />
-                <img class="shot" src="tt-dangketnoi-ble.jpg" alt="Đang kết nối BLE" loading="lazy" />
-                <img class="shot" src="tt-ketnoi-ble-icard-thanhcong.jpg" alt="Kết nối BLE thành công" loading="lazy" />
-              </div>
-            </article>
+      <section id="ios-mo-nhanh" class="section-block">
+        <div class="section-heading"><p class="section-kicker">iPhone</p><h2>Mở nhanh iCard System</h2><p>Chọn một cách phù hợp với đời iPhone và phiên bản iOS đang dùng.</p></div>
+        <div class="method-list">
+          <article class="method"><div class="method-number">1</div><div><h3>Đưa biểu tượng chính vào Dock</h3><p>Nhấn giữ biểu tượng iCard System trên Màn hình chính, kéo biểu tượng xuống Dock. Cách này dùng được trên mọi iPhone tương thích và là lựa chọn đơn giản nhất.</p></div></article>
+          <article class="method"><div class="method-number">2</div><div><h3>Tạo biểu tượng “Open Auto Swipe” bằng ứng dụng Phím tắt</h3><ol><li>Mở iCard System ít nhất một lần sau khi cài đặt.</li><li>Mở ứng dụng <strong>Phím tắt (Shortcuts)</strong>.</li><li>Vào <strong>Phím tắt ứng dụng / App Shortcuts</strong>, chọn <strong>iCard System</strong>.</li><li>Chọn <strong>Open Auto Swipe</strong>, dùng tùy chọn tạo phím tắt mới nếu cần.</li><li>Mở phần chi tiết của phím tắt, chọn <strong>Thêm vào Màn hình chính</strong>.</li></ol><p class="method-note">Phù hợp với iOS 16 trở lên, bao gồm iPhone 8/8 Plus/X đang chạy iOS 16.</p></div></article>
+          <article class="method"><div class="method-number">3</div><div><h3>Mở bằng Siri</h3><p>Kích hoạt Siri rồi nói <strong>“Open Auto Swipe in iCard System”</strong>. Nếu máy đang khóa, iPhone có thể yêu cầu mở khóa trước khi vào ứng dụng.</p></div></article>
+          <article class="method"><div class="method-number">4</div><div><h3>Thêm nút vào Control Center trên iOS 18 trở lên</h3><ol><li>Mở Control Center: vuốt xuống từ góc trên bên phải trên máy Face ID.</li><li>Nhấn nút <strong>Thêm</strong> hoặc nhấn giữ vùng trống để chỉnh sửa.</li><li>Chọn <strong>Thêm một điều khiển</strong>.</li><li>Tìm <strong>iCard Auto Swipe</strong> và thêm vào vị trí thuận tiện.</li></ol><p class="method-note">Control Center của iCard yêu cầu iOS 18. iPhone 8/8 Plus/X không hỗ trợ cách này; hãy dùng Phím tắt hoặc Dock.</p></div></article>
+        </div>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">4. Cấu hình thiết bị</div>
-              <p class="step-note">Cấu hình giao diện, ngôn ngữ, và đổi tên đầu đọc nếu cần để dễ quản lý.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-cauhinh.jpg" alt="Màn hình cấu hình" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-giaodien.jpg" alt="Cấu hình giao diện" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-ngonngu.jpg" alt="Cấu hình ngôn ngữ" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-ten-daudoc.jpg" alt="Cấu hình tên đầu đọc" loading="lazy" />
-              </div>
-            </article>
+      <section id="android" class="section-block platform-section">
+        <div class="platform-title"><span class="platform-badge android">Android</span><div><h2>Thiết lập trên điện thoại Android</h2><p>Áp dụng cho Samsung, Google Pixel, Motorola, LG, Xiaomi, Redmi, POCO, OPPO, realme, OnePlus, vivo, iQOO, Huawei và Honor.</p></div></div>
+        <div class="version-grid">
+          <article><h3>Android 12 trở lên</h3><p>Khi iCard System hỏi quyền, chọn <strong>Cho phép Thiết bị ở gần / Nearby devices</strong> để quét và kết nối đầu đọc BLE. Cấp Camera khi quét QR.</p></article>
+          <article><h3>Android 11 trở xuống</h3><p>Quét BLE có thể cần quyền <strong>Vị trí</strong> theo cơ chế Android cũ. Bật Vị trí của hệ thống và cấp quyền trong lúc dùng ứng dụng nếu được hỏi.</p></article>
+          <article><h3>Điện thoại không có NFC</h3><p>Vẫn có thể dùng đầu đọc RFID BLE nếu phần cứng Bluetooth Low Energy hoạt động. Chức năng quét NFC trực tiếp trên điện thoại sẽ không khả dụng.</p></article>
+        </div>
+        <h3 class="subheading">Cấp hoặc kiểm tra quyền chung</h3>
+        <ol class="compact-steps">
+          <li>Nhấn giữ biểu tượng <strong>iCard System</strong> và chọn <strong>Thông tin ứng dụng</strong>; hoặc vào <strong>Cài đặt → Ứng dụng → iCard System</strong>.</li>
+          <li>Mở <strong>Quyền</strong>.</li><li>Cho phép <strong>Camera</strong> và <strong>Thiết bị ở gần</strong>. Với Android 11 trở xuống, cho phép <strong>Vị trí</strong> nếu hệ thống yêu cầu cho BLE.</li>
+          <li>Kiểm tra Bluetooth đang bật. Nếu dùng NFC, tìm “NFC” trong Cài đặt và bật tính năng này.</li>
+          <li>Nếu ứng dụng đã lâu không dùng, tắt <strong>Tạm dừng hoạt động ứng dụng nếu không dùng</strong> khi tính năng này làm hệ thống tự thu hồi quyền.</li>
+        </ol>
+        <div class="warning-note" role="note"><strong>Không cần cấp quyền không liên quan.</strong> iCard System không yêu cầu quyền Trợ năng, Quản trị thiết bị, đọc SMS hoặc danh bạ để thực hiện QR, BLE hay NFC.</div>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">5. Bật ảnh nền và kiểm tra trạng thái</div>
-              <p class="step-note">Chọn ảnh nền nếu cần, rồi kiểm tra màn hình hoạt động bình thường.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-ch-anhnen.jpg" alt="Chọn ảnh nền" loading="lazy" />
-                <img class="shot" src="tt-hoatdong-binhthuong.jpg" alt="Hoạt động bình thường" loading="lazy" />
-              </div>
-            </article>
+      <section id="android-mo-nhanh" class="section-block">
+        <div class="section-heading"><p class="section-kicker">Android</p><h2>Bốn cách mở nhanh Auto Swipe</h2><p>Các cách dưới đây đã được ứng dụng hỗ trợ. Tên mục có thể khác theo launcher của từng hãng.</p></div>
+        <div class="method-list">
+          <article class="method"><div class="method-number">1</div><div><h3>Nhấn giữ biểu tượng ứng dụng</h3><p>Nhấn giữ biểu tượng <strong>iCard System</strong>, chọn <strong>Auto Swipe</strong>. Có thể nhấn giữ mục Auto Swipe rồi kéo ra Màn hình chính nếu launcher hỗ trợ.</p></div></article>
+          <article class="method"><div class="method-number">2</div><div><h3>Thêm lối tắt từ bên trong iCard System</h3><p>Vào <strong>Cài đặt trong ứng dụng → Khởi động ứng dụng → Thêm Auto Swipe vào màn hình chính</strong>, sau đó xác nhận trong hộp thoại Android.</p></div></article>
+          <article class="method"><div class="method-number">3</div><div><h3>Thêm Widget iCard Auto Swipe</h3><p>Nhấn giữ vùng trống trên Màn hình chính → <strong>Widget</strong> → tìm <strong>iCard Auto Swipe</strong> → kéo widget ra Màn hình chính.</p></div></article>
+          <article class="method"><div class="method-number">4</div><div><h3>Thêm ô Auto Swipe vào Cài đặt nhanh</h3><p>Vuốt xuống hai lần để mở toàn bộ Cài đặt nhanh → chọn <strong>Chỉnh sửa</strong> → tìm ô <strong>Auto Swipe</strong> → kéo vào vùng đang hoạt động.</p></div></article>
+        </div>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">6. Quét thẻ BLE / NFC</div>
-              <p class="step-note">Kiểm tra quét thành công ở cả BLE và NFC để xác nhận toàn bộ luồng hoạt động ổn định.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-quetthe-thanhcong-ble.jpg" alt="Quét thẻ BLE thành công" loading="lazy" />
-                <img class="shot" src="tt-quetthe-thanhcong-nfc.jpg" alt="Quét thẻ NFC thành công" loading="lazy" />
-              </div>
-            </article>
-          </div>
-        </section>
+      <section id="hang-android" class="section-block">
+        <div class="section-heading"><p class="section-kicker">Tối ưu theo hãng</p><h2>Cài đặt cho từng nhóm điện thoại Android</h2><p>Chỉ thay đổi quản lý pin khi BLE thường xuyên mất kết nối hoặc ứng dụng bị hệ thống đóng. Cho phép chạy nền nhiều hơn có thể làm tăng mức sử dụng pin.</p></div>
+        <div class="manufacturer-list">
+          <details open><summary>Samsung Galaxy — One UI</summary><div class="details-body"><ol><li><strong>Quyền:</strong> Cài đặt → Ứng dụng → iCard System → Quyền → cho phép Camera và Thiết bị ở gần.</li><li><strong>NFC:</strong> Cài đặt → Kết nối → NFC và thanh toán không tiếp xúc → bật NFC; hoặc dùng nút NFC trong bảng Cài đặt nhanh nếu có.</li><li><strong>Không để ứng dụng ngủ:</strong> Cài đặt → Chăm sóc pin và thiết bị / Chăm sóc thiết bị → Pin → Giới hạn sử dụng dưới nền → Ứng dụng không bao giờ tự ngủ → thêm iCard System.</li><li>Kiểm tra iCard System không nằm trong danh sách <strong>Ứng dụng ngủ sâu</strong>.</li></ol></div></details>
+          <details><summary>Google Pixel, Motorola, Nokia và Android gần nguyên bản</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng → Xem tất cả ứng dụng → iCard System → Quyền.</li><li>Cho phép Camera, Thiết bị ở gần; thêm Vị trí trên Android 11 trở xuống nếu BLE yêu cầu.</li><li>Nếu BLE bị ngắt khi tắt màn hình: Thông tin ứng dụng → Pin / Mức sử dụng pin của ứng dụng → cho phép sử dụng dưới nền. Chỉ chọn <strong>Không hạn chế</strong> khi thật sự cần.</li></ol></div></details>
+          <details><summary>LG — các phiên bản Android cũ và mới</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng &amp; thông báo → Thông tin ứng dụng → iCard System → Quyền.</li><li>Bật Camera, Bluetooth/Thiết bị ở gần hoặc Vị trí tùy phiên bản Android.</li><li>Tìm “NFC” trong Cài đặt; trên nhiều máy LG cũ, mục này nằm trong <strong>Mạng → Chia sẻ &amp; kết nối</strong>.</li><li>Nếu có mục Tiết kiệm pin cho từng ứng dụng, loại iCard System khỏi hạn chế khi BLE bị đóng nền.</li></ol><p class="details-note">LG đã có nhiều giao diện cài đặt khác nhau; nên dùng ô tìm kiếm trong Cài đặt với từ khóa “quyền”, “NFC” hoặc “tối ưu pin”.</p></div></details>
+          <details><summary>Xiaomi, Redmi và POCO — MIUI / HyperOS</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng → Quản lý ứng dụng → iCard System → Quyền ứng dụng → cho phép quyền cần thiết.</li><li>Cài đặt → Ứng dụng → Quyền → <strong>Tự khởi động nền / Background autostart</strong> → bật cho iCard System.</li><li>Cài đặt → Pin → chọn iCard System → chọn <strong>Không hạn chế / No restrictions</strong> nếu BLE mất kết nối nền.</li><li>Mở danh sách ứng dụng gần đây, nhấn giữ hoặc kéo thẻ iCard System xuống để khóa ứng dụng nếu máy thường xuyên dọn ứng dụng nền.</li></ol></div></details>
+          <details><summary>OPPO, realme và OnePlus — ColorOS / realme UI / OxygenOS</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng / Quản lý ứng dụng → iCard System → Quyền → cho phép Camera và Thiết bị ở gần.</li><li>Cài đặt → Pin → Quản lý pin ứng dụng → iCard System.</li><li>Bật <strong>Cho phép hoạt động nền</strong> và <strong>Cho phép tự khởi chạy</strong> nếu các tùy chọn này xuất hiện.</li><li>Nếu hệ thống có mục Tối ưu sử dụng pin, chọn không tối ưu iCard System khi BLE bị ngắt lúc khóa màn hình.</li></ol><p class="details-note">Tên menu thay đổi giữa các bản ColorOS/OxygenOS. Hãy tìm “Auto launch”, “Background activity” hoặc “Battery optimization”.</p></div></details>
+          <details><summary>vivo và iQOO — Funtouch OS / OriginOS</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng → iCard System → Quyền → cho phép quyền cần thiết.</li><li>Cài đặt → Ứng dụng → Quyền truy cập ứng dụng đặc biệt → <strong>Tự khởi động / Autostart</strong> → bật iCard System nếu có.</li><li>Trong Pin hoặc Quản lý pin nền, cho phép iCard System hoạt động nền nếu kết nối BLE không duy trì.</li><li>Trên một số máy nội địa Trung Quốc, kiểm tra thêm iManager → Quản lý ứng dụng → Tự khởi động.</li></ol></div></details>
+          <details><summary>Huawei — EMUI / HarmonyOS</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng → Ứng dụng → iCard System → Quyền → bật quyền cần thiết.</li><li>Mở Trình quản lý điện thoại / Optimizer → <strong>Khởi chạy ứng dụng</strong>.</li><li>Tắt <strong>Quản lý tự động</strong> cho iCard System, sau đó bật <strong>Tự khởi chạy</strong>, <strong>Khởi chạy thứ cấp</strong> và <strong>Chạy trong nền</strong>.</li><li>Tìm “Tối ưu pin” trong Cài đặt → Tất cả ứng dụng → iCard System → chọn <strong>Không cho phép tối ưu</strong> nếu BLE bị đóng nền.</li></ol></div></details>
+          <details><summary>Honor — MagicOS</summary><div class="details-body"><ol><li>Cài đặt → Ứng dụng → iCard System → Quyền → bật quyền cần thiết.</li><li>Tìm <strong>Khởi chạy / App launch</strong> trong Cài đặt hoặc Optimizer.</li><li>Tắt Quản lý tự động cho iCard System; bật Tự khởi chạy, Khởi chạy thứ cấp và Chạy trong nền.</li><li>Nếu cần, tìm Tối ưu pin → Tất cả ứng dụng → iCard System → chọn không tối ưu; có thể khóa thẻ ứng dụng trong màn hình ứng dụng gần đây.</li></ol></div></details>
+        </div>
+      </section>
 
-        <section class="panel" role="tabpanel" id="panel-android" aria-labelledby="tab-android" hidden>
-          <div class="panel-intro">
-            <h2>Hướng dẫn cho Android</h2>
-            <p>
-              Trên Android, chú ý phần quyền BLE và NFC. Nếu thiết bị ở Android 11 trở xuống,
-              vị trí có thể liên quan đến quét BLE theo cấu hình hệ thống.
-            </p>
-          </div>
+      <section id="van-hanh" class="section-block">
+        <div class="section-heading"><p class="section-kicker">Vận hành hằng ngày</p><h2>Kết nối BLE và quét NFC ổn định</h2></div>
+        <div class="two-column">
+          <article class="guide-card"><h3>Đầu đọc RFID BLE</h3><ol><li>Bật đầu đọc và giữ trong phạm vi gần điện thoại.</li><li>Mở iCard System → BLE, chọn đúng thiết bị theo tên đã cấu hình.</li><li>Chờ trạng thái kết nối thành công rồi mới đưa thẻ vào đầu đọc.</li><li>Nếu có nhiều đầu đọc, tắt hoặc đưa các đầu đọc không dùng ra xa để tránh chọn nhầm.</li><li>Nếu tín hiệu yếu, giảm khoảng cách và tránh vật kim loại lớn giữa điện thoại với đầu đọc.</li></ol></article>
+          <article class="guide-card"><h3>NFC trực tiếp trên điện thoại</h3><ol><li>Bật NFC trên Android; iPhone không cần bật công tắc NFC.</li><li>Mở chức năng NFC trong iCard System trước khi đưa thẻ vào.</li><li>Đặt một thẻ tại vùng anten NFC và giữ yên đến khi có phản hồi.</li><li>Không để nhiều thẻ NFC chồng lên nhau hoặc để trong ví kim loại.</li><li>Nếu thất bại, nhấc thẻ ra, chờ một giây và thử lại tại vị trí hơi khác.</li></ol></article>
+        </div>
+      </section>
 
-          <div class="step-grid">
-            <article class="step-card">
-              <div class="step-head">1. Cấp quyền ban đầu</div>
-              <p class="step-note">Cấp quyền Bluetooth, NFC và Camera trước khi bắt đầu để app không bị ngắt quãng.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-chuacapquyen-ble.jpg" alt="Chưa cấp quyền BLE" loading="lazy" />
-                <img class="shot" src="b1-capquyen-ble.jpg" alt="Cấp quyền BLE" loading="lazy" />
-                <img class="shot" src="tt-chuacapquyen-nfc.jpg" alt="Chưa cấp quyền NFC" loading="lazy" />
-                <img class="shot" src="tt-capquyen-camera.jpg" alt="Cấp quyền Camera" loading="lazy" />
-              </div>
-            </article>
+      <section id="xu-ly-loi" class="section-block">
+        <div class="section-heading"><p class="section-kicker">Chẩn đoán nhanh</p><h2>Xử lý sự cố theo triệu chứng</h2><p>Thực hiện từ trên xuống và dừng khi vấn đề đã được khắc phục.</p></div>
+        <div class="troubleshooting">
+          <details open><summary>Không quét được mã QR kích hoạt</summary><div class="details-body"><ol><li>Kiểm tra Camera đã được cấp quyền cho iCard System.</li><li>Tăng độ sáng màn hình đang hiển thị QR; lau sạch camera.</li><li>Đặt QR phẳng, tránh lóa và giữ toàn bộ mã trong khung.</li><li>Kiểm tra Internet và ngày giờ tự động của điện thoại.</li><li>Nếu QR đã hết hạn hoặc đã dùng sai thiết bị, liên hệ đơn vị cấp licence.</li></ol></div></details>
+          <details><summary>Không tìm thấy đầu đọc BLE</summary><div class="details-body"><ol><li>Kiểm tra đầu đọc đang bật, còn pin và chưa kết nối với điện thoại khác.</li><li>Tắt rồi bật lại Bluetooth; giữ đầu đọc gần điện thoại.</li><li>Android 12+: kiểm tra Thiết bị ở gần. Android 11 trở xuống: kiểm tra Vị trí và quyền Vị trí.</li><li>iPhone: Cài đặt → Quyền riêng tư &amp; Bảo mật → Bluetooth → bật iCard System.</li><li>Đóng và mở lại màn hình BLE; nếu vẫn lỗi, khởi động lại đầu đọc và điện thoại.</li></ol></div></details>
+          <details><summary>BLE kết nối rồi tự ngắt khi khóa màn hình</summary><div class="details-body"><ol><li>Đưa iCard System ra khỏi chế độ ngủ sâu hoặc hạn chế nền theo hướng dẫn từng hãng.</li><li>Tắt Tiết kiệm pin trong ca vận hành nếu chế độ này làm hệ thống hạn chế Bluetooth.</li><li>Trên iCard System, bật tùy chọn giữ màn hình sáng khi Auto Swipe nếu quy trình yêu cầu ứng dụng ở foreground.</li><li>Không vuốt đóng iCard System khỏi danh sách ứng dụng gần đây trong lúc vận hành.</li></ol></div></details>
+          <details><summary>Điện thoại không đọc được thẻ NFC</summary><div class="details-body"><ol><li>Xác nhận điện thoại có phần cứng NFC và NFC đang bật trên Android.</li><li>Tháo ốp dày hoặc phụ kiện kim loại; chỉ giữ một thẻ ở vùng đọc.</li><li>Di chuyển chậm thẻ quanh mặt lưng phía trên của điện thoại rồi giữ yên.</li><li>Thử thẻ NFC khác đã biết là hoạt động để phân biệt lỗi thẻ và lỗi điện thoại.</li><li>Nếu thiết bị không hỗ trợ NFC, sử dụng đầu đọc BLE tương thích.</li></ol></div></details>
+          <details><summary>Cập nhật hoặc cài lại nhưng không thấy licence</summary><div class="details-body"><ol><li>Kiểm tra đúng ứng dụng iCard System chính thức và đúng thiết bị đã kích hoạt.</li><li>Kết nối Internet, đóng rồi mở lại ứng dụng và chờ kiểm tra licence.</li><li>Không xóa dữ liệu ứng dụng hoặc đặt lại điện thoại trong khi đang xử lý.</li><li>Nếu licence bị thu hồi, đổi thiết bị hoặc không thể khôi phục, liên hệ đơn vị cấp licence; không dùng lại QR cũ nếu chưa được phép.</li></ol></div></details>
+        </div>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">2. Kích hoạt license</div>
-              <p class="step-note">Quét QR kích hoạt và xác nhận xong để chuyển sang trạng thái vận hành.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-chuakichhoat-licence.jpg" alt="Chưa kích hoạt license" loading="lazy" />
-                <img class="shot" src="tt-kichhoat-thanhcong.jpg" alt="Kích hoạt thành công" loading="lazy" />
-              </div>
-            </article>
+      <section id="bao-mat" class="section-block">
+        <div class="section-heading"><p class="section-kicker">An toàn</p><h2>Bảo vệ licence và dữ liệu vận hành</h2></div>
+        <ul class="security-list"><li>Chỉ quét mã QR do đơn vị quản lý hoặc bộ phận hỗ trợ có thẩm quyền cung cấp.</li><li>Không chụp, đăng công khai hoặc chuyển tiếp QR kích hoạt cho người khác.</li><li>Không cài APK từ tin nhắn hoặc website không được phê duyệt.</li><li>Không cấp quyền Trợ năng, Quản trị thiết bị, SMS hoặc Danh bạ cho một ứng dụng giả mạo iCard System.</li><li>Khi đổi hoặc bàn giao điện thoại, liên hệ quản trị viên để thu hồi hoặc chuyển licence đúng quy trình.</li><li>Xem chi tiết dữ liệu và thời gian lưu trữ tại <a href="https://hna-privacy-policy.hna.id.vn/">Chính sách bảo mật iCard System</a>.</li></ul>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">3. Kết nối BLE</div>
-              <p class="step-note">Mở màn hình BLE, nhấn nút kết nối và chờ trạng thái ghép nối thành công.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-manhinh-ble-anhnen.jpg" alt="Màn hình BLE" loading="lazy" />
-                <img class="shot" src="tt-kichhoat-ble-nhapvaodautich.jpg" alt="Nhấn nút kết nối BLE" loading="lazy" />
-                <img class="shot" src="tt-dangketnoi-ble.jpg" alt="Đang kết nối BLE" loading="lazy" />
-                <img class="shot" src="tt-ketnoi-ble-icard-thanhcong.jpg" alt="Kết nối BLE thành công" loading="lazy" />
-              </div>
-            </article>
+      <section id="nguon" class="section-block sources-section">
+        <div class="section-heading"><p class="section-kicker">Đối chiếu kỹ thuật</p><h2>Nguồn tham khảo chính thức</h2><p>Đường dẫn cài đặt của hãng có thể thay đổi sau các bản cập nhật hệ điều hành.</p></div>
+        <ul class="source-list">
+          <li><a href="https://support.apple.com/guide/iphone/iph168c4bbd5/ios">Apple — quản lý quyền Camera, Bluetooth và phần cứng</a></li>
+          <li><a href="https://support.apple.com/108330">Apple — mở và tùy chỉnh Control Center</a></li>
+          <li><a href="https://support.apple.com/guide/shortcuts/apd43295406d/ios">Apple — chạy App Shortcuts</a></li>
+          <li><a href="https://support.apple.com/guide/shortcuts/apd735880972/ios">Apple — thêm phím tắt vào Màn hình chính</a></li>
+          <li><a href="https://developer.apple.com/documentation/corenfc">Apple Developer — Core NFC</a></li>
+          <li><a href="https://support.google.com/pixelphone/answer/6293419">Google — thay đổi quyền ứng dụng trên Android</a></li>
+          <li><a href="https://developer.android.com/develop/connectivity/bluetooth/bt-permissions">Android Developers — quyền Bluetooth theo phiên bản Android</a></li>
+          <li><a href="https://support.google.com/android/answer/13627979">Google — quản lý ứng dụng không sử dụng và quyền bị thu hồi</a></li>
+          <li><a href="https://www.samsung.com/us/support/answer/ANS10003442/">Samsung — Sleeping apps và Never sleeping apps</a></li>
+          <li><a href="https://www.mi.com/global/support/faq/details/KA-507608/">Xiaomi — Background autostart</a></li>
+          <li><a href="https://consumer.huawei.com/en/support/content/en-us15850065/">Huawei — bảo vệ ứng dụng chạy nền</a></li>
+          <li><a href="https://www.honor.com/global/support/content/en-us00409866/">Honor — Launch settings và quản lý pin</a></li>
+          <li><a href="https://www.realme.com/global/support/faq">realme — quản lý pin, chạy nền và tự khởi động</a></li>
+        </ul>
+      </section>
 
-            <article class="step-card">
-              <div class="step-head">4. Đổi tên đầu đọc</div>
-              <p class="step-note">Đặt tên dễ nhớ, xem hướng dẫn đặt tên và xác nhận sau khi lưu thành công.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-cauhinh-ten-daudoc.jpg" alt="Cấu hình tên đầu đọc" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-ten-daudoc-hdbt.jpg" alt="Hướng dẫn đặt tên" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-ten-daudoc-thanhcong.jpg" alt="Đổi tên thành công" loading="lazy" />
-              </div>
-            </article>
-
-            <article class="step-card">
-              <div class="step-head">5. Cấu hình và ảnh nền</div>
-              <p class="step-note">Tuỳ chỉnh giao diện, ngôn ngữ và ảnh nền để thao tác thuận tiện hơn.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-cauhinh.jpg" alt="Màn hình cấu hình" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-giaodien.jpg" alt="Cấu hình giao diện" loading="lazy" />
-                <img class="shot" src="tt-cauhinh-ngonngu.jpg" alt="Cấu hình ngôn ngữ" loading="lazy" />
-                <img class="shot" src="tt-ch-anhnen.jpg" alt="Chọn ảnh nền" loading="lazy" />
-              </div>
-            </article>
-
-            <article class="step-card">
-              <div class="step-head">6. Quét thẻ BLE / NFC</div>
-              <p class="step-note">Khi app ở trạng thái bình thường, thử quét BLE và NFC để kiểm tra kết nối đầu đọc.</p>
-              <div class="shot-grid">
-                <img class="shot" src="tt-hoatdong-binhthuong.jpg" alt="Hoạt động bình thường" loading="lazy" />
-                <img class="shot" src="tt-quetthe-thanhcong-ble.jpg" alt="Quét thẻ BLE thành công" loading="lazy" />
-                <img class="shot" src="tt-quetthe-thanhcong-nfc.jpg" alt="Quét thẻ NFC thành công" loading="lazy" />
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    (function () {
-      const layer = document.getElementById('bitsLayer');
-      if (layer) {
-        const count = 220;
-        for (let i = 0; i < count; i++) {
-          const span = document.createElement('span');
-          span.className = 'bit';
-          span.textContent = Math.random() > 0.5 ? '1' : '0';
-          span.style.left = (-10 + Math.random() * 15).toFixed(2) + 'vw';
-          span.style.top = (Math.random() * 100).toFixed(2) + 'vh';
-          span.style.fontSize = (9 + Math.random() * 12).toFixed(0) + 'px';
-          span.style.animationDuration = (9 + Math.random() * 16).toFixed(2) + 's';
-          span.style.animationDelay = (-Math.random() * 22).toFixed(2) + 's';
-          layer.appendChild(span);
-        }
-      }
-
-      const tabs = Array.from(document.querySelectorAll('[data-tab]'));
-      const panels = new Map(
-        Array.from(document.querySelectorAll('.panel')).map((panel) => [panel.id.replace('panel-', ''), panel]),
-      );
-
-      function activate(tabName) {
-        tabs.forEach((button) => {
-          const isActive = button.dataset.tab === tabName;
-          button.classList.toggle('is-active', isActive);
-          button.setAttribute('aria-selected', String(isActive));
-          button.tabIndex = isActive ? 0 : -1;
-        });
-
-        panels.forEach((panel, key) => {
-          const isActive = key === tabName;
-          panel.classList.toggle('is-active', isActive);
-          panel.hidden = !isActive;
-        });
-      }
-
-      tabs.forEach((button) => {
-        button.addEventListener('click', () => activate(button.dataset.tab));
-      });
-
-      activate('ios');
-    })();
-  </script>
+      <section class="support-card" aria-labelledby="support-title">
+        <div><p class="section-kicker">Cần hỗ trợ thêm?</p><h2 id="support-title">Gửi thông tin để được xử lý nhanh</h2><p>Nêu rõ hãng máy, model, phiên bản hệ điều hành, bước đang thực hiện và thông báo lỗi hiển thị. Không gửi mã QR kích hoạt qua kênh công khai.</p></div>
+        <a class="button" href="mailto:support@hna.id.vn?subject=iCard%20System%20Support">support@hna.id.vn</a>
+      </section>
+      <footer class="site-footer"><p>© 2026 HNA iCard Team. Hướng dẫn này dành cho iCard System trên iOS và Android.</p><a href="#top">Về đầu trang</a></footer>
+    </main>
+  </div>
 </body>
 </html>
